@@ -1,0 +1,5 @@
+package com.java.stanford.nlp.core;
+
+public class Pipeline {
+
+}

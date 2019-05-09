@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="com.java.stanford.nlp.core.Pipeline"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.pipeline.StanfordCoreNLP"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.pipeline.CoreDocument"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreLabel"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.java.stanford.nlp.examples.TokenizedExample"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.pipeline.CoreSentence"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreAnnotation"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreAnnotations"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation"/>
+    <fullyQualifiedTypeName name="edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation"/>
+</qualifiedTypeNameHistroy>

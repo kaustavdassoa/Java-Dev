@@ -1,0 +1,5 @@
+package com.java.stanford.nlp.component;
+
+public class CommandLineAppStartupRunner {
+
+}

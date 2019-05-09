@@ -1,0 +1,29 @@
+package com.java.stanford.nlp.examples;
+import java.util.List;
+
+import com.java.stanford.nlp.core.Pipeline;
+
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+
+
+public class TokenizedExample {
+
+	
+	public static void main(String[] args)
+	{
+
+		StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
+		String text="This is a very long string .";
+		CoreDocument coreDocument= new CoreDocument(text);
+		stanfordCoreNlp.annotate(coreDocument);
+		
+		List<CoreLabel> listOfCoreLables =coreDocument.tokens();
+		for(CoreLabel label : listOfCoreLables)
+		{
+			System.out.println(label);
+		}
+		
+	}//main 
+}

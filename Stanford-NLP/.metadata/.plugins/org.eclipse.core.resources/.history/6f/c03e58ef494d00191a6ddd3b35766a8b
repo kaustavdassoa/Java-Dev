@@ -1,0 +1,14 @@
+package com.java.stanford.nlp.component;
+
+import org.slf4j.LoggerFactory;
+
+public class CommandLineAppStartupRunner {
+
+	
+	private static final Logger logger = LoggerFactory.getLogger(CommandLineAppStartupRunner.class);
+    @Override
+    public void run(String...args) throws Exception 
+    {
+        logger.info("Starting CommandLineAppStartupRunner.run()");
+    }
+}
