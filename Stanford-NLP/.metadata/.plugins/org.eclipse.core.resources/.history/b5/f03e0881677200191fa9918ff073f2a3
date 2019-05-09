@@ -1,0 +1,15 @@
+package com.java.stanford.nlp.examples;
+
+public class SentimentAnalyzer {
+	
+	static Properties props;
+	static StanfordCoreNLP pipeline;
+	
+	public void getSentimentResult(String text) {
+		
+		
+		
+		
+	}//getSentimentResult
+
+}

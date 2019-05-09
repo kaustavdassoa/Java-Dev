@@ -1,0 +1,75 @@
+package com.java.stanford.nlp.examples;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
+import com.java.stanford.nlp.core.Pipeline;
+
+import edu.stanford.nlp.ling.CoreAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.CoreSentence;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+
+
+public class SimpleExample {
+
+	private static final Logger logger = LoggerFactory.getLogger(SimpleExample.class);
+	public static void start()
+	{
+		logger.info("");
+    	StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
+
+    	
+    	
+ 		String text="Hello ! Mr. Smith, are going in this bus. This is a good bus. NO. It's a bad ride";
+ 		CoreDocument document= new CoreDocument(text);
+ 		
+ 		
+ 				
+ 		stanfordCoreNlp.annotate(document);
+
+ 		
+ 		List<CoreLabel> listOfCoreLables =document.tokens();
+ 		List<CoreSentence> listOfSentence=document.sentences();
+ 	  
+ 		
+ 			
+ 		logger.info("Total words found "+listOfCoreLables.size());
+ 		logger.info("Total sentences found "+listOfSentence.size());
+ 		
+ 		ArrayList<String> listOfTokens=new ArrayList<String>();
+ 		ArrayList<String> listOfSentencess=new ArrayList<String>();
+ 		ArrayList<String> listOfsentiment=new ArrayList<String>();
+ 		
+ 		for(CoreSentence sentence : listOfSentence)
+	    {
+ 			listOfSentencess.add(sentence.text()+" | "+sentence.sentiment());
+ 			
+ 		}
+ 		
+ 		for(CoreSentence sentence : listOfSentence)
+	    {
+ 			listOfsentiment.add(sentence.sentiment());
+ 			
+ 		}
+ 		
+		for(CoreLabel label : listOfCoreLables)
+	    {
+			String partOfSpeech=label.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+			String ner=label.get(CoreAnnotations.NamedEntityTagAnnotation.class);
+			
+			listOfTokens.add(label.originalText()+"-"+partOfSpeech+"-"+label.lemma()+"-"+ner);
+ 		}
+		logger.info("List of Sentence "+listOfSentencess);
+		logger.info("List of Words "+listOfTokens);
+		logger.info("List of Sentiments "+listOfsentiment);
+		
+		
+		
+	 }//main 
+}

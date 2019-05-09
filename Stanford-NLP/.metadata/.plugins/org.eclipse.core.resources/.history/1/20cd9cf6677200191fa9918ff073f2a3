@@ -1,0 +1,22 @@
+package com.java.stanford.nlp.examples;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.java.stanford.nlp.core.Pipeline;
+
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+
+public class SentimentAnalyzer {
+	
+	private static final Logger logger = LoggerFactory.getLogger(SentimentAnalyzer.class);
+	public void getSentimentResult(String text) {
+		
+		logger.info("");
+    	StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
+    	
+		
+		
+	}//getSentimentResult
+
+}

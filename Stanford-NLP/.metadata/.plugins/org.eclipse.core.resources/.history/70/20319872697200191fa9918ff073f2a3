@@ -19,8 +19,8 @@ public class CommandLineAppStartupRunner implements CommandLineRunner{
     public void run(String...args) throws Exception 
     {
         logger.info("Starting CommandLineAppStartupRunner.run()");
-       // SimpleExample.start();
-        String text="Never expected my office party to be hosted here. Ample space and live screening with a good glass of beer made the evening to be remembered. The rooftop part where we went to smoke was awesome too. Situated just on the main road, this place can't be missed.";
+        SimpleExample.start();
+        String text="Hello ! Mr. Smith, are going in this bus. This is a good bus. NO. It's a bad ride";
         SentimentAnalyzer.getSentimentResult(text);
     }
 }
