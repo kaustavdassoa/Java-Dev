@@ -1,0 +1,5 @@
+package com.nlp.sentiment.analysis.app.component;
+
+public class SentimentAnalyzer {
+
+}

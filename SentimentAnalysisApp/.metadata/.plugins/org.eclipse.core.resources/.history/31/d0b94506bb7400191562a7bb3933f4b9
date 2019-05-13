@@ -1,0 +1,20 @@
+package com.nlp.sentiment.analysis.app.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class SentimentAnalysisController {
+
+	/**
+	 * 
+	 * @param text
+	 * @return String 
+	 * 
+	 * Note: returns one of the following values : Very negative, Negative,Neutral,Positive OR Very positive
+	 */
+	public String getSentimentAnalysis(String text)
+	{
+		return "Very positive";
+	}
+}

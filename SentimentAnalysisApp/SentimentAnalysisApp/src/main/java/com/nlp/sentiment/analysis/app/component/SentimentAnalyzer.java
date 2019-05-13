@@ -1,0 +1,114 @@
+package com.nlp.sentiment.analysis.app.component;
+
+/*
+ * "Very negative" = 0 
+ * "Negative" = 1 
+ * "Neutral" = 2 
+ * "Positive" = 3
+ * "Very positive" = 4
+ */
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+import com.nlp.sentiment.analysis.app.pipeline.Pipeline;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.CoreDocument;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.sentiment.SentimentCoreAnnotations;
+import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.util.CoreMap;
+import edu.stanford.nlp.neural.rnn.RNNCoreAnnotations;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.ejml.simple.SimpleMatrix;
+import edu.stanford.nlp.pipeline.CoreSentence;
+
+@Component
+public class SentimentAnalyzer {
+
+	 private static final Logger logger = LoggerFactory.getLogger(SentimentAnalyzer.class);
+	
+	
+	 
+     public String getSentimentResult(String text) 
+     {
+		
+		logger.info("Inside SentimentAnalyzer method ()");
+    	StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
+    	String result="";
+    	
+    	Annotation annotation = stanfordCoreNlp.process(text);
+    	for (CoreMap sentence : annotation.get(CoreAnnotations.SentencesAnnotation.class)) {
+			// this is the parse tree of the current sentence
+			Tree tree = sentence.get(SentimentCoreAnnotations.SentimentAnnotatedTree.class);
+			SimpleMatrix sm = RNNCoreAnnotations.getPredictions(tree);
+			String sentimentType = sentence.get(SentimentCoreAnnotations.SentimentClass.class);
+
+			
+			logger.info("sentence :"+sentence.toString());
+//			logger.info("sentimentClass.setVeryPositive = "+(double)Math.round(sm.get(4) * 100d));
+//			logger.info("sentimentClass.setPositive ="+(double)Math.round(sm.get(3) * 100d));
+//			logger.info("sentimentClass.setNeutral ="+(double)Math.round(sm.get(2) * 100d));
+//			logger.info("sentimentClass.setNegative = "+(double)Math.round(sm.get(1) * 100d));
+//			logger.info("sentimentClass.setVeryNegative= "+(double)Math.round(sm.get(0) * 100d));
+//			
+//			logger.info("sentimentResult.setSentimentScore= "+RNNCoreAnnotations.getPredictedClass(tree));
+//			logger.info("sentimentResult.setSentimentType ="+sentimentType);
+			
+			result=sentimentType;
+			
+			
+		}
+		return result;
+		
+		
+	}//getSentimentResult
+     
+     public String getSentiments(String text)
+	 {
+    	 int scoreVeryNegative=0;
+    	 String sentimentFull="";
+    	 
+    	 ArrayList<String> listOfsentiment=new ArrayList<String>();
+    	 ArrayList<String> listOfSentencess=new ArrayList<String>();
+    	 
+    	 SentimentAnalyzer sentimentAnalyzer=new SentimentAnalyzer();
+    	 
+    	 StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
+    	 CoreDocument document= new CoreDocument(text);
+    	 stanfordCoreNlp.annotate(document);
+    	 
+    	 List<CoreSentence> listOfSentence=document.sentences();
+    	 
+    	 for(CoreSentence sentence : listOfSentence)
+    	 {
+  			listOfSentencess.add(sentence.text()+" | "+sentence.sentiment());
+  			
+  		 }//for
+    	 
+    	 logger.info("listOfSentence="+listOfSentence.size());
+    	 for(String sentence : listOfSentencess)
+    	 {
+		
+    		 listOfsentiment.add(sentimentAnalyzer.getSentimentResult(sentence));
+    	 }
+    	 
+    	 
+    	 logger.info("listOfsentiment="+listOfsentiment.size());
+    	 for(String sentiments : listOfsentiment )
+    	 {
+    		 logger.info("Before Adding sentimentFull ="+sentimentFull);
+    		 logger.info("Adding sentiment ="+sentiments);
+    		 sentimentFull=sentiments+"||"+sentimentFull;
+    		 logger.info("After Adding sentimentFull ="+sentimentFull);
+    	 }
+    	 
+		 return sentimentFull;
+	}//getSentimentResultAdv
+}

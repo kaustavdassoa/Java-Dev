@@ -1,0 +1,30 @@
+package com.nlp.sentiment.analysis.app.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
+@RestController
+public class SentimentAnalysisController {
+
+	/**
+	 * 
+	 * @param text
+	 * @return String 
+	 * 
+	 * getSentimentAnalysis method returns one of the following values : Very negative, Negative,Neutral,Positive OR Very positive
+	 */
+	
+	private static final Logger logger = LoggerFactory.getLogger(SentimentAnalysisController.class);
+	
+	
+	@PostMapping("/employees")
+	public String getSentimentAnalysis(@RequestBody String text)
+	{
+		
+		
+		return "Very positive";
+	}
+}

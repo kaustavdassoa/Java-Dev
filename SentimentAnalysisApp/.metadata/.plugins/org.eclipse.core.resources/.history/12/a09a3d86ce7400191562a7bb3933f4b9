@@ -1,0 +1,40 @@
+package com.nlp.sentiment.analysis.app.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nlp.sentiment.analysis.app.component.SentimentAnalyzer;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+
+@RestController
+public class SentimentAnalysisController {
+
+	
+	private static final Logger logger = LoggerFactory.getLogger(SentimentAnalysisController.class);
+	
+	/**
+	 * 
+	 * @param text
+	 * @return ResponseEntity < String >
+	 */
+	
+	@Autowired
+	SentimentAnalyzer sentimentAnalyzer;
+	
+	
+	@PostMapping("/analyse")
+	public ResponseEntity < String > getSentimentAnalysis(@RequestBody String text)
+	{
+		
+		logger.info("input test message : "+text);
+	
+		String sentimentAnalyzerResult=sentimentAnalyzer.getSentimentResult(text);
+		return new ResponseEntity<String>(sentimentAnalyzerResult.toUpperCase(),null,HttpStatus.OK);
+	}
+}
