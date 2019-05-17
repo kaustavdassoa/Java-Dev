@@ -8,17 +8,13 @@ This is a demo repository for JAVA applications.Over the time I will be adding s
 # New Features!
 
  - **Stanford-NLP** Demonstrating Stanford-NLP feature in a simple example (AddedOn:05/09/2019)
- - **SentimentAnalysisApp** SpringBoot Microservice application to evaluate sentiment of a sentence or a paragraph  (AddedOn:05/09/2019)
+ - **SentimentAnalysisApp** SpringBoot Microservice application to evaluate sentiment of a sentence or a paragraph  (AddedOn:05/18/2019)
 
 
 
 
 License
 ----
-
-Free
-
-
 **Free Software, Hell Yeah!**
 
 ## Reference Link 
