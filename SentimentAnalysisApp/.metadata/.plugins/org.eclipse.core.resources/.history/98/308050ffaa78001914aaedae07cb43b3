@@ -1,0 +1,101 @@
+package com.nlp.sentiment.analysis.app.componet;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class SentimentResults {
+	
+	private String text;
+	private String sentiment;
+	private double veryPositiveScore;
+	private double positiveScore;
+	private double neutralScore;
+	private double negativeScore;
+	private double veryNegativeScore;
+	
+	/**
+	 * @return the sentiment
+	 */
+	public String getSentiment() {
+		return sentiment;
+	}
+	/**
+	 * @return the text
+	 */
+	public String getText() {
+		return text;
+	}
+	/**
+	 * @param text the text to set
+	 */
+	public void setText(String text) {
+		this.text = text;
+	}
+	/**
+	 * @param sentiment the sentiment to set
+	 */
+	public void setSentiment(String sentiment) {
+		this.sentiment = sentiment;
+	}
+	/**
+	 * @return the veryPositiveScore
+	 */
+	public double getVeryPositiveScore() {
+		return veryPositiveScore;
+	}
+	/**
+	 * @param veryPositiveScore the veryPositiveScore to set
+	 */
+	public void setVeryPositiveScore(double veryPositiveScore) {
+		this.veryPositiveScore = veryPositiveScore;
+	}
+	/**
+	 * @return the positiveScore
+	 */
+	public double getPositiveScore() {
+		return positiveScore;
+	}
+	/**
+	 * @param positiveScore the positiveScore to set
+	 */
+	public void setPositiveScore(double positiveScore) {
+		this.positiveScore = positiveScore;
+	}
+	/**
+	 * @return the neutralScore
+	 */
+	public double getNeutralScore() {
+		return neutralScore;
+	}
+	/**
+	 * @param neutralScore the neutralScore to set
+	 */
+	public void setNeutralScore(double neutralScore) {
+		this.neutralScore = neutralScore;
+	}
+	/**
+	 * @return the negativeScore
+	 */
+	public double getNegativeScore() {
+		return negativeScore;
+	}
+	/**
+	 * @param negativeScore the negativeScore to set
+	 */
+	public void setNegativeScore(double negativeScore) {
+		this.negativeScore = negativeScore;
+	}
+	/**
+	 * @return the veryNegativeScore
+	 */
+	public double getVeryNegativeScore() {
+		return veryNegativeScore;
+	}
+	/**
+	 * @param veryNegativeScore the veryNegativeScore to set
+	 */
+	public void setVeryNegativeScore(double veryNegativeScore) {
+		this.veryNegativeScore = veryNegativeScore;
+	}
+
+}

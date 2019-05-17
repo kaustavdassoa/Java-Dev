@@ -1,0 +1,12 @@
+package com.nlp.sentiment.analysis.app.componet;
+
+public class Sentiments {
+	
+	private String sentiment;
+	private double veryPositiveScore;
+	private double positiveScore;
+	private double neutralScore;
+	private double negativeScore;
+	private double veryNegativeScore;
+
+}

@@ -10,10 +10,12 @@ package com.nlp.sentiment.analysis.app.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import com.nlp.sentiment.analysis.app.componet.Pipeline;
+import com.nlp.sentiment.analysis.app.componet.SentimentResults;
 
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.CoreDocument;
@@ -35,11 +37,12 @@ public class SentimentAnalyzer {
 
 	 private static final Logger logger = LoggerFactory.getLogger(SentimentAnalyzer.class);
 	
-	
 	 
-     public String getSentimentResult(String text) 
+	 
+	 
+     public SentimentResults getSentimentResult(String text) 
      {
-		
+    	SentimentResults sentimentResults=new SentimentResults();
 		logger.info("Inside SentimentAnalyzer method ()");
     	StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
     	String result="";
@@ -51,65 +54,20 @@ public class SentimentAnalyzer {
 			SimpleMatrix sm = RNNCoreAnnotations.getPredictions(tree);
 			String sentimentType = sentence.get(SentimentCoreAnnotations.SentimentClass.class);
 
-			
-			logger.info("sentence :"+sentence.toString());
-//			logger.info("sentimentClass.setVeryPositive = "+(double)Math.round(sm.get(4) * 100d));
-//			logger.info("sentimentClass.setPositive ="+(double)Math.round(sm.get(3) * 100d));
-//			logger.info("sentimentClass.setNeutral ="+(double)Math.round(sm.get(2) * 100d));
-//			logger.info("sentimentClass.setNegative = "+(double)Math.round(sm.get(1) * 100d));
-//			logger.info("sentimentClass.setVeryNegative= "+(double)Math.round(sm.get(0) * 100d));
-//			
-//			logger.info("sentimentResult.setSentimentScore= "+RNNCoreAnnotations.getPredictedClass(tree));
-//			logger.info("sentimentResult.setSentimentType ="+sentimentType);
-			
-			result=sentimentType;
-			
+			sentimentResults.setText(sentimentResults.getText()+""+sentence.toString());
+			sentimentResults.setSentiment(sentimentResults.getSentiment()+"||"+sentimentType.toUpperCase());
+			sentimentResults.setVeryPositiveScore(sentimentResults.getVeryPositiveScore()+(double)Math.round(sm.get(4) * 100d));
+			sentimentResults.setPositiveScore(sentimentResults.getPositiveScore()+(double)Math.round(sm.get(3) * 100d));
+			sentimentResults.setNeutralScore(sentimentResults.getNeutralScore()+(double)Math.round(sm.get(2) * 100d));
+			sentimentResults.setNegativeScore(sentimentResults.getNegativeScore()+(double)Math.round(sm.get(1) * 100d));
+			sentimentResults.setVeryNegativeScore(sentimentResults.getVeryNegativeScore()+(double)Math.round(sm.get(0) * 100d));
 			
 		}
-		return result;
+    	
+		return sentimentResults;
 		
 		
 	}//getSentimentResult
      
-     public String getSentiments(String text)
-	 {
-    	 int scoreVeryNegative=0;
-    	 String sentimentFull="";
-    	 
-    	 ArrayList<String> listOfsentiment=new ArrayList<String>();
-    	 ArrayList<String> listOfSentencess=new ArrayList<String>();
-    	 
-    	 SentimentAnalyzer sentimentAnalyzer=new SentimentAnalyzer();
-    	 
-    	 StanfordCoreNLP stanfordCoreNlp=Pipeline.getPipeline();
-    	 CoreDocument document= new CoreDocument(text);
-    	 stanfordCoreNlp.annotate(document);
-    	 
-    	 List<CoreSentence> listOfSentence=document.sentences();
-    	 
-    	 for(CoreSentence sentence : listOfSentence)
-    	 {
-  			listOfSentencess.add(sentence.text()+" | "+sentence.sentiment());
-  			
-  		 }//for
-    	 
-    	 logger.info("listOfSentence="+listOfSentence.size());
-    	 for(String sentence : listOfSentencess)
-    	 {
-		
-    		 listOfsentiment.add(sentimentAnalyzer.getSentimentResult(sentence));
-    	 }
-    	 
-    	 
-    	 logger.info("listOfsentiment="+listOfsentiment.size());
-    	 for(String sentiments : listOfsentiment )
-    	 {
-    		 logger.info("Before Adding sentimentFull ="+sentimentFull);
-    		 logger.info("Adding sentiment ="+sentiments);
-    		 sentimentFull=sentiments+"||"+sentimentFull;
-    		 logger.info("After Adding sentimentFull ="+sentimentFull);
-    	 }
-    	 
-		 return sentimentFull;
-	}//getSentimentResultAdv
+    
 }

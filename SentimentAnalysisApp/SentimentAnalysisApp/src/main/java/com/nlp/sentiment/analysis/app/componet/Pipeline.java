@@ -1,8 +1,12 @@
-package com.nlp.sentiment.analysis.app.pipeline;
+package com.nlp.sentiment.analysis.app.componet;
 
 import java.util.Properties;
+
+import org.springframework.stereotype.Component;
+
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
+@Component
 public class Pipeline {
 
 	
@@ -11,28 +15,28 @@ public class Pipeline {
 	private static StanfordCoreNLP stanfordCoreNlp;
 	
 	
-	    //Private Constructor 
-		private Pipeline()
-		{
+	//Constructor 
+	Pipeline()
+	{
 			
-		}
+	}
 		
-		//static block
-		static {
-			properties = new Properties();
-		    properties.setProperty("annotators", propertiesName);
-			
-					
-		}
+	//static block
+	static 
+	{
+		properties = new Properties();
+	    properties.setProperty("annotators", propertiesName);
+	}
 		
 
-		public static StanfordCoreNLP getPipeline()
+	//getter method
+	public static StanfordCoreNLP getPipeline()
+	{
+		if(stanfordCoreNlp == null)
 		{
-			if(stanfordCoreNlp == null)
-			{
 				stanfordCoreNlp=new StanfordCoreNLP(properties);
-			}
-			
-			return stanfordCoreNlp;
 		}
+			
+		return stanfordCoreNlp;
+	}
 }
