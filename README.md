@@ -7,7 +7,10 @@ This is a demo repository for JAVA applications.Over the time I will be adding s
 
  - **Stanford-NLP** Demonstrating Stanford-NLP feature with a simple example. (**AddedOn:05/09/2019**)
  - **SentimentAnalysisApp** SpringBoot Microservice application to evaluate sentiment of a sentence or a paragraph. (**AddedOn:05/18/2019**)
- - **JAVA JAVA-MasterClass** Collection of JAVA example showcaseing different java 8-11 features. (**AddedOn:12/24/2019**)
+ - **JAVA JAVA-MasterClass** Collection of JAVA example showcasing new java 8-11 features. (**AddedOn:12/24/2019**)
+ - **JAVA JAVA-DesignPattern** Demo Repo for all known JAVA design pattern. List of Patterns(**AddedOn:01/01/2020**)
+    * ***Strategy Pattern*** 
+    * ***Observer Pattern***
 
 
 
