@@ -63,6 +63,22 @@ public class SentimentAnalyzer {
 			sentimentResults.setVeryNegativeScore(sentimentResults.getVeryNegativeScore()+(double)Math.round(sm.get(0) * 100d));
 			
 		}
+    	double score=(sentimentResults.getVeryPositiveScore()+sentimentResults.getPositiveScore())-(sentimentResults.getVeryNegativeScore()+sentimentResults.getNegativeScore())+sentimentResults.getNeutralScore();
+    	logger.info("SCORE = "+score);
+    	sentimentResults.setScore(score);
+    
+    	if(score < 0)
+    	{
+    		sentimentResults.setCollectiveSetiment("NEGATIVE");
+    	}
+    	else if (score == 0)
+    	{	
+    		sentimentResults.setCollectiveSetiment("NEUTRAL");
+    	}	
+    	else 
+    	{	
+    		sentimentResults.setCollectiveSetiment("POSITIVE");
+    	}	
     	
 		return sentimentResults;
 		

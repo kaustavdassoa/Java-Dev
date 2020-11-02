@@ -12,11 +12,14 @@ public class SentimentResults {
 	private double neutralScore;
 	private double negativeScore;
 	private double veryNegativeScore;
+	private double score;
+	private String collectiveSetiment;
 	
 	public SentimentResults()
 	{
 		this.text="";
 		this.sentiment="";
+		this.collectiveSetiment="";		
 	}
 	
 	public String getText() {
@@ -40,6 +43,12 @@ public class SentimentResults {
 	public double getVeryNegativeScore() {
 		return veryNegativeScore;
 	}
+	public double getScore() {
+		return score;
+	}
+	public String getCollectiveSetiment() {
+		return collectiveSetiment;
+	}
 	public void setText(String text) {
 		this.text = text;
 	}
@@ -61,6 +70,13 @@ public class SentimentResults {
 	public void setVeryNegativeScore(double veryNegativeScore) {
 		this.veryNegativeScore = veryNegativeScore;
 	}
+	public void setScore(double score) {
+		this.score = score;
+	}
+	public void setCollectiveSetiment(String collectiveSetiment) {
+		this.collectiveSetiment = collectiveSetiment;
+	}
+	
 	
 	
 
