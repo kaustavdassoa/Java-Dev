@@ -24,3 +24,5 @@ Free Software, Hell Yeah!
 <a href="https://blog.openshift.com/day-20-stanford-corenlp-performing-sentiment-analysis-of-twitter-using-java/" target="_blank">Learn Any technology in 30 days demo Stanford-Corenlp sentiment analysis</a> 
 
 <a href="https://github.com/iluwatar/java-design-patterns">GIT Rep for Ref JAVA-DESIGN patterns</a>
+
+<a href="https://medium.com/javarevisited">Medium Java Revisited - Medium’s largest Java publication, followed by 7300+ programmers.</a>
