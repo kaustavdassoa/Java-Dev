@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Kaustav Das
  * 
  * Add transactions and faultHandling  
- * @RefLink : https://github.com/iainporter/spring-file-poller
+ * @RefLink : https://github.com/iainporter/spring-file-poller : 
+ * @RefLink : https://medium.com/@changeant/file-poller-with-spring-integration-dsl-ecb7bc996ba5
  */
 
 @SpringBootApplication
