@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "c5eeff5d-d566-4781-91f8-0a0ed3308d9e",
+		"name": "SPRINGBOOT-BOOTCAMP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HazelcastDemo",
+			"item": [
+				{
+					"name": "STORE-DATA-TO-CACHE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hazelcast/write-data?key=Message&value=\"Hello%20World%20rom%20Cache\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hazelcast",
+								"write-data"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "Message"
+								},
+								{
+									"key": "value",
+									"value": "\"Hello%20World%20rom%20Cache\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "READ-ALL-CACHE-DATA",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/hazelcast/read-all-data",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"hazelcast",
+								"read-all-data"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "HazelcastDemo"
+		},
+		{
+			"name": "SpringSOAPDemo",
+			"item": [
+				{
+					"name": "SOAP WEBSERVICE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "text/xml",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:kd=\"http://kaustavdassoa.springbootwebservice.example.com/countries\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <kd:getCountryRequest>\r\n            <kd:name>Poland</kd:name>\r\n        </kd:getCountryRequest>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/ws",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"ws"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
