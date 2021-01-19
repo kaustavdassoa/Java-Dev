@@ -1,0 +1,7 @@
+
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      #option : none , validate , update , create and create-drop
