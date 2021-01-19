@@ -99,6 +99,36 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "JPADemo",
+			"item": [
+				{
+					"name": "GetRecipeByCategory=Mexican",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/getCategory?description=Mexican",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getCategory"
+							],
+							"query": [
+								{
+									"key": "description",
+									"value": "Mexican"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
