@@ -1,4 +1,4 @@
-package com.springdemo.cqrs.user.cmd.api.dto;
+package com.springdemo.cqrs.user.core.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package com.springdemo.cqrs.user.cmd.api.controllers;
 
 import com.springdemo.cqrs.user.cmd.api.commands.RemoveUserCommand;
-import com.springdemo.cqrs.user.cmd.api.dto.BaseResponse;
+import com.springdemo.cqrs.user.core.dto.BaseResponse;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/deleteuser")
+@RequestMapping( path="/api/v1/deleteuser")
 public class RemovesUserController {
 
 

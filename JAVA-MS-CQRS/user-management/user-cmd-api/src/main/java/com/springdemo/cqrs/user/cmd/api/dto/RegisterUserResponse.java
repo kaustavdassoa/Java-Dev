@@ -1,7 +1,9 @@
 package com.springdemo.cqrs.user.cmd.api.dto;
 
 
-public class RegisterUserResponse extends BaseResponse{
+import com.springdemo.cqrs.user.core.dto.BaseResponse;
+
+public class RegisterUserResponse extends BaseResponse {
     private String id;
 
     public RegisterUserResponse(String id, String message) {

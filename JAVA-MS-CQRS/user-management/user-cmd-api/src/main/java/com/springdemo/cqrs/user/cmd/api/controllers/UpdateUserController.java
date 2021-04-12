@@ -1,7 +1,7 @@
 package com.springdemo.cqrs.user.cmd.api.controllers;
 
 import com.springdemo.cqrs.user.cmd.api.commands.UpdateUserCommand;
-import com.springdemo.cqrs.user.cmd.api.dto.BaseResponse;
+import com.springdemo.cqrs.user.core.dto.BaseResponse;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/v1/updateuser")
+@RequestMapping( path="/api/v1/updateuser")
 public class UpdateUserController {
 
     private final CommandGateway commandGateway;

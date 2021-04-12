@@ -7,9 +7,11 @@ import com.springdemo.cqrs.user.query.api.query.SearchUsersQuery;
 import com.springdemo.cqrs.user.query.api.repositories.UserRepository;
 import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+@Service
 public class UserQueryHandlerImpl implements UserQueryHandler{
 
     private final UserRepository userRepository;
@@ -23,15 +25,14 @@ public class UserQueryHandlerImpl implements UserQueryHandler{
     @QueryHandler
     @Override
     public UserLookupResponse getUserById(FindUserByIdQuery query) {
-       var user=this.userRepository.findById(query.getId());
+      var user=this.userRepository.findById(query.getId());
       return new UserLookupResponse(user.isPresent() ? user.get() : null);
     }
 
     @QueryHandler
     @Override
     public UserLookupResponse searchUsers(SearchUsersQuery query) {
-        //TODO: String filter to be copied from Video 12
-        return null;
+      return new UserLookupResponse(new ArrayList<>(this.userRepository.findByFilterRegex(query.getFilter())));
     }
 
     @QueryHandler

@@ -15,7 +15,7 @@ import javax.validation.Valid;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/v1/registeruser")
+@RequestMapping( path="/api/v1/registeruser")
 public class RegisterUserController {
 
     private final CommandGateway commandGateway;
@@ -32,13 +32,14 @@ public class RegisterUserController {
         command.setId(id);
         try{
 
+
             commandGateway.send(command);
             return new ResponseEntity<>(new RegisterUserResponse(id, "user successfully registered"),HttpStatus.CREATED);
         }
         catch (Exception e)
         {
             System.out.println(e.toString());
-            return new ResponseEntity<>(new RegisterUserResponse(id,"error in registring user "),HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(new RegisterUserResponse(id,"error in registring user"),HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }//rigisterUser
