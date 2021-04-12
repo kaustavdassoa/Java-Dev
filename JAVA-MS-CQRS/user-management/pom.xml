@@ -12,6 +12,7 @@
         <module>user-core</module>
         <module>user-cmd-api</module>
         <module>user-query-api</module>
+        <module>spring-oauth-2.0</module>
     </modules>
 
 </project>

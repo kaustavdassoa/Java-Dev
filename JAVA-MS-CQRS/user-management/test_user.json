@@ -1,0 +1,13 @@
+{
+    "_id" : "test_user_id",
+    "firstName" : "testUser",
+    "lastName" : "testUser",
+    "emailAddress" : "testUser@example.com",
+    "account" : {
+        "userName" : "testUser",
+        "password" : "$2a$12$mxjy0FLtLypalu1psRNED.c02zfpGnzYmRyW7St3o7BsYZPKPgz9y",
+        "roles" : [ 
+            "WRITE_PRIVILEGE"
+        ]
+    }
+}
