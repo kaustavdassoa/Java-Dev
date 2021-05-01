@@ -1,4 +1,4 @@
-package com.designpatterns.strategy;
+package com.designpatterns.strategy.example1;
 
 /*
 The Strategy Pattern defines a family of algorithms,

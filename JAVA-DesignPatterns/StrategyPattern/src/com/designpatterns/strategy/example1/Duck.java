@@ -1,4 +1,4 @@
-package com.designpatterns.strategy;
+package com.designpatterns.strategy.example1;
 
 //Parent Class
 public class Duck {
