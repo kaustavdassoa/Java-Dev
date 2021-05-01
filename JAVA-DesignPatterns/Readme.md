@@ -28,11 +28,11 @@ Strategy Desing pattern are suited for the following scenarios during developmen
 * Two or more implementations of same interface used in same process, which is determinate by some external parameter.
 
 
-##Observer Design pattern
+## Observer Design pattern
 
 ##### When to use Observer pattern
 
-####Refered Link
+#### Refered Link
 
 [Christopher Okhravi - Design Patterns in Object Oriented Programming](#https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc)
 
