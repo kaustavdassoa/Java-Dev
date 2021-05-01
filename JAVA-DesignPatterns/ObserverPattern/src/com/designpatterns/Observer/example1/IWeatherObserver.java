@@ -1,4 +1,4 @@
-package com.designpatterns.Observer;
+package com.designpatterns.Observer.example1;
 
 public abstract class IWeatherObserver implements Comparable<IWeatherObserver> {
     private String name;
@@ -14,7 +14,6 @@ public abstract class IWeatherObserver implements Comparable<IWeatherObserver> {
 
     @Override
     public int compareTo(IWeatherObserver iWeatherObserver) {
-        //TO DO
         int compareVal=0;
         return this.getName().compareToIgnoreCase(iWeatherObserver.getName());
     }

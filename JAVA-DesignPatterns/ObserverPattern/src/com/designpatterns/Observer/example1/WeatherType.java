@@ -1,4 +1,4 @@
-package com.designpatterns.Observer;
+package com.designpatterns.Observer.example1;
 
 public enum WeatherType {
 

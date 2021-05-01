@@ -1,13 +1,17 @@
-package com.designpatterns.Observer;
+package com.designpatterns.Observer.example1;
 
-public class WeatherWatch extends IWeatherObserver {
+public class WeatherApp extends IWeatherObserver{
 
-    public WeatherWatch(String displayName) {
+    public WeatherApp(String displayName) {
         this.setName(displayName);
+
     }
 
     @Override
     public void update(Weather weather) {
         System.out.println("["+this.getName()+"]"+" Current Weather is : "+weather.getWeather());
     }
+
+
+
 }
