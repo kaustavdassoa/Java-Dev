@@ -55,7 +55,7 @@ public class ProductServiceIT {
     }
 
     @Test
-    @DisplayName("Validate getProduct - product found")
+    @DisplayName("Integration Test - validate getProduct - product found")
     @DataSet("products.yml")
     public void validate_getProduct_product_found() throws Exception {
         mockMvc.perform(get("/product/{id}",2))
@@ -75,11 +75,27 @@ public class ProductServiceIT {
     }
 
     @Test
-    @DisplayName("Validate getProduct - not found")
+    @DisplayName("Integration Test - validate getProduct - not found")
     @DataSet("products.yml")
     public void validate_getProduct_product_not_found() throws Exception {
         mockMvc.perform(get("/product/{id}",3))
                 .andExpect(status().is(HttpStatus.NOT_FOUND.value()));
+    }
+
+    @Test
+    @DisplayName("Integration Test - validate deleteProduct - found")
+    @DataSet("products.yml")
+    public void validate_deleteProduct_found() throws Exception {
+        mockMvc.perform(delete("/product/{id}",1))
+                .andExpect(status().is(HttpStatus.OK.value()));
+    }
+
+    @Test
+    @DisplayName("Integration Test - validate deleteProduct - not found")
+    @DataSet("products.yml")
+    public void validate_deleteProduct_not_found() throws Exception {
+        mockMvc.perform(delete("/product/{id}",1))
+                .andExpect(status().is(HttpStatus.OK.value()));
     }
 
 }
