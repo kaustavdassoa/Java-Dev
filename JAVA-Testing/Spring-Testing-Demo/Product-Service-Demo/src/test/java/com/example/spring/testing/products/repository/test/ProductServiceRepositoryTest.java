@@ -1,4 +1,4 @@
-package com.example.spring.testing.products.service.test;
+package com.example.spring.testing.products.repository.test;
 
 import com.example.spring.testing.products.model.Product;
 import com.example.spring.testing.products.repository.ProductRepository;
@@ -33,7 +33,6 @@ public class ProductServiceRepositoryTest {
     @Autowired
     ProductRepository repository;
 
-    @Bean
     public ConnectionHolder getConnectionHolder() throws SQLException {
         // Return a function that retrieves a connection from our data source
         return () -> dataSource.getConnection();

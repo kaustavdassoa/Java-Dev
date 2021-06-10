@@ -1,4 +1,4 @@
-package com.example.spring.testing.products;
+package com.example.spring.testing.products.service.test;
 
 import com.example.spring.testing.products.model.Product;
 import com.example.spring.testing.products.repository.ProductRepository;
