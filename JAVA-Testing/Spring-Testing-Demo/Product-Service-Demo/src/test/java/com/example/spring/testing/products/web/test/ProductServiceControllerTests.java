@@ -1,4 +1,4 @@
-package com.example.spring.testing.products;
+package com.example.spring.testing.products.web.test;
 
 import com.example.spring.testing.products.model.Product;
 import com.example.spring.testing.products.service.ProductService;
@@ -35,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-class ProductServiceDemoApplicationTests {
+class ProductServiceControllerTests {
 
 	public static final String PRODUCT_NAME = "Product Name";
 
@@ -180,8 +180,39 @@ class ProductServiceDemoApplicationTests {
 
 
 
+	@Test
+	@DisplayName("DELETE /product/{id} - found")
+	public void validate_delete_products() throws Exception {
+		Product mockProduct=new Product(1, PRODUCT_NAME,1,1);
+		doReturn(Optional.of(mockProduct)).when(productService).findById(1);
+		doReturn(true).when(productService).delete(mockProduct.getId());
+
+		mockMvc.perform(delete("/product/{id}",1))
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	@DisplayName("DELETE /product/{id} - delete failed")
+	public void validate_delete_failed() throws Exception {
+		Product mockProduct=new Product(1, PRODUCT_NAME,1,1);
+		doReturn(Optional.of(mockProduct)).when(productService).findById(1);
+		doReturn(false).when(productService).delete(mockProduct.getId());
+
+		mockMvc.perform(delete("/product/{id}",1))
+				.andExpect(status().isInternalServerError());
+	}
 
 
+	@Test
+	@DisplayName("DELETE /product/{id} - not found")
+	public void validate_delete_product_not_found() throws Exception {
+		Product mockProduct=new Product(1, PRODUCT_NAME,1,1);
+		doReturn(Optional.empty()).when(productService).findById(anyInt());
+
+
+		mockMvc.perform(delete("/product/{id}",1))
+				.andExpect(status().isNotFound());
+	}
 
 	static String asJsonString(final Object obj) {
 		try {
