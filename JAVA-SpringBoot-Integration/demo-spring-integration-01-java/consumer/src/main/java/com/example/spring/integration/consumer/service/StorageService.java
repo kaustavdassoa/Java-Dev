@@ -6,6 +6,7 @@ import com.example.spring.integration.consumer.repository.SampleMessageRepositor
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,7 @@ public class StorageService {
     }
 
 
+    @ServiceActivator(inputChannel = "registrationRequest")
     public void getMessage(@Header("dateTime") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) OffsetDateTime dateTime,
                            @Payload SampleMessageV1 sampleMessage) {
 

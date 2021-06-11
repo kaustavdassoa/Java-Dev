@@ -19,11 +19,11 @@ import java.util.UUID;
 @Log
 public class MessageSenderController {
 
-    private final MessageChannel registrationRequestChannel;
+    private final MessageChannel inQueueRequestChannel;
 
-    public MessageSenderController(@Qualifier("InQueueRequest") MessageChannel registrationRequestChannel)
+    public MessageSenderController(@Qualifier("INQUEUEREQUESTCHANNEL") MessageChannel inQueueRequestChannel)
     {
-        this.registrationRequestChannel = registrationRequestChannel;
+        this.inQueueRequestChannel = inQueueRequestChannel;
     }
 
     @PostMapping("/sendmessage")
@@ -39,7 +39,7 @@ public class MessageSenderController {
                 .build();
 
         log.info("Generated inqueue request "+inQueueMessage.toString());
-        registrationRequestChannel.send(inQueueMessage);
+        inQueueRequestChannel.send(inQueueMessage);
         log.info("Inqueue request sent successfully [messageID :]"+sampleMessage.getMessageID());
 
         return sampleMessage.getMessageID();
