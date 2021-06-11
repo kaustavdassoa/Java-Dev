@@ -10,15 +10,18 @@
 
     <!--Input Channel-->
     <int:channel id="InQueueRequest"/>
-
-    <!-- Transformer to convert the message payload from an AttendeeRegistration object to JSON -->
-    <int:object-to-json-transformer input-channel="InQueueRequest" output-channel="toRabbit"/>
-
     <!--Intermediate channel-->
     <int:channel id="toRabbit"/>
 
     <!-- Outbound channel adapter which sends messages to RabbitMQ -->
     <!-- Spring Boot automatically provides 'rabbitTemplate' -->
     <int-amqp:outbound-channel-adapter channel="toRabbit" amqp-template="rabbitTemplate" routing-key="InQueue"/>
+
+
+    <!-- Transformer to convert the message payload from an AttendeeRegistration object to JSON -->
+    <int:object-to-json-transformer input-channel="InQueueRequest" output-channel="toRabbit"/>
+
+
+
 
 </beans>
