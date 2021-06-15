@@ -1,4 +1,4 @@
-package com.example.spring.testing.products.repository.test;
+package com.example.spring.testing.products.repository.test.dbunitext;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
