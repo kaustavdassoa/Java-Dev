@@ -1,4 +1,0 @@
-  
-example:
-  file:
-    in: source    out: destination    processed: processed    error: error    allowed-ext: .jpg    output-file-ext: .txt    poller-thread-pool-size : 1    
