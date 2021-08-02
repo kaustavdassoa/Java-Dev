@@ -1,0 +1,6 @@
+package com.example.spring.kafka.producer.domain;
+
+public enum LibraryEvenType {
+    NEW,
+    UPDATE;
+}

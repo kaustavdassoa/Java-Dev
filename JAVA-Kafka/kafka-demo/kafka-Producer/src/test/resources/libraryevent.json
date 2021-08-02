@@ -1,0 +1,8 @@
+{
+  "libraryEventId" : "001",
+  "book" : {
+    "isbnId" : "1234567",
+    "bookName": "Test Book",
+    "bookAuthor" : "Test Author"
+  }
+}
