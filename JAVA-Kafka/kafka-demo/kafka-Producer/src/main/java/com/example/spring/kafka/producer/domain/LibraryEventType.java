@@ -1,6 +1,6 @@
 package com.example.spring.kafka.producer.domain;
 
-public enum LibraryEvenType {
+public enum LibraryEventType {
     NEW,
     UPDATE;
 }

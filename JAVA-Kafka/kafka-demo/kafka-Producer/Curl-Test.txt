@@ -1,1 +1,0 @@
-curl -i -d '{"libraryEventId":null,"book":{"isbnId":456,"bookName":"Kafka Using Spring Boot","bookAuthor":"Kaustav Das"}}' -H "Content-Type: application/json" -X POST http://localhost:8081/v1/libraryevent/addBook

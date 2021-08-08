@@ -2,12 +2,10 @@ package com.example.spring.kafka.producer.unittest;
 
 import com.example.spring.kafka.producer.controller.LibraryEventController;
 import com.example.spring.kafka.producer.domain.Book;
-import com.example.spring.kafka.producer.domain.LibraryEvenType;
+import com.example.spring.kafka.producer.domain.LibraryEventType;
 import com.example.spring.kafka.producer.domain.LibraryEvent;
 import com.example.spring.kafka.producer.service.LibEventProducer;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.tomcat.util.file.Matcher;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,16 +15,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.kafka.support.SendResult;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.ResultMatcher;
-
-import java.awt.*;
 
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.ArgumentMatchers.isA;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -64,7 +55,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
         LibraryEvent libraryEvent=LibraryEvent.builder().
                 libraryEventId(null)
-                .libraryEvenType(LibraryEvenType.NEW)
+                .libraryEventType(LibraryEventType.NEW)
                 .book(book)
                 .build();
 
@@ -96,7 +87,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
         LibraryEvent libraryEvent=LibraryEvent.builder().
                 libraryEventId(null)
-                .libraryEvenType(LibraryEvenType.NEW)
+                .libraryEventType(LibraryEventType.NEW)
                 .book(null)
                 .build();
 
@@ -132,7 +123,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
         LibraryEvent libraryEvent=LibraryEvent.builder().
                 libraryEventId(1)
-                .libraryEvenType(LibraryEvenType.NEW)
+                .libraryEventType(LibraryEventType.NEW)
                 .book(book)
                 .build();
 
@@ -164,7 +155,7 @@ public class LibraryEventControllerUnitTest {
                 .build();
         LibraryEvent libraryEvent=LibraryEvent.builder().
                 libraryEventId(null)
-                .libraryEvenType(LibraryEvenType.NEW)
+                .libraryEventType(LibraryEventType.NEW)
                 .book(book)
                 .build();
 

@@ -1,7 +1,7 @@
 package com.example.spring.kafka.producer.integrationtest;
 
 import com.example.spring.kafka.producer.domain.Book;
-import com.example.spring.kafka.producer.domain.LibraryEvenType;
+import com.example.spring.kafka.producer.domain.LibraryEventType;
 import com.example.spring.kafka.producer.domain.LibraryEvent;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,6 @@ import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
@@ -20,8 +19,6 @@ import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.kafka.test.utils.KafkaTestUtils;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -75,7 +72,7 @@ public class LibraryEventControllerIntegrationTest {
                         .build();
         LibraryEvent libraryEvent=LibraryEvent.builder().
                                         libraryEventId(null)
-                                        .libraryEvenType(LibraryEvenType.NEW)
+                                        .libraryEventType(LibraryEventType.NEW)
                                         .book(book)
                                         .build();
         HttpHeaders headers=new HttpHeaders();
@@ -113,7 +110,7 @@ public class LibraryEventControllerIntegrationTest {
 
         LibraryEvent expectedLibraryEvent=LibraryEvent.builder().
                 libraryEventId(1)
-                .libraryEvenType(LibraryEvenType.UPDATE)
+                .libraryEventType(LibraryEventType.UPDATE)
                 .book(book)
                 .build();
         HttpHeaders headers=new HttpHeaders();

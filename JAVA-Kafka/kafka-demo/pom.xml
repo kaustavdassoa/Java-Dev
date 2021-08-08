@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>kafka-Producer</module>
+		<module>kafka-Consumer</module>
     </modules>
 
 </project>

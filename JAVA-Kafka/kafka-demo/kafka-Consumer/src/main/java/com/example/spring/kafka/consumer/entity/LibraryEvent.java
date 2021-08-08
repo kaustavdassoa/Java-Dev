@@ -1,19 +1,23 @@
-package com.example.spring.kafka.producer.domain;
-
+package com.example.spring.kafka.consumer.entity;
 import lombok.*;
 
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Builder
+@Entity
 public class LibraryEvent {
-    private Integer libraryEventId;
-    private LibraryEventType libraryEventType;
-    @NotNull
-    @Valid
-    private Book book;
 
+    @Id
+    @GeneratedValue
+    private Integer libraryEventId;
+    @Enumerated(EnumType.STRING)
+    private LibraryEventType libraryEventType;
+    @OneToOne(mappedBy = "libraryEvent", cascade = {CascadeType.ALL})
+    @ToString.Exclude
+    private Book book;
 }

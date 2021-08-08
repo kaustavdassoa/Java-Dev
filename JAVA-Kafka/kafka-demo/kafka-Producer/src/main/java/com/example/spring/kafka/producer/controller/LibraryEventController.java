@@ -1,6 +1,6 @@
 package com.example.spring.kafka.producer.controller;
 
-import com.example.spring.kafka.producer.domain.LibraryEvenType;
+import com.example.spring.kafka.producer.domain.LibraryEventType;
 import com.example.spring.kafka.producer.domain.LibraryEvent;
 import com.example.spring.kafka.producer.service.LibEventProducer;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -26,7 +26,7 @@ public class LibraryEventController {
     public ResponseEntity<LibraryEvent> addBook(@RequestBody @Valid  LibraryEvent libraryEvent) throws JsonProcessingException {
         log.info("inside addBook() method");
 
-        libraryEvent.setLibraryEvenType(LibraryEvenType.NEW);
+        libraryEvent.setLibraryEventType(LibraryEventType.NEW);
         //libEventProducer.sendLibraryEvent(libraryEvent);//this method executed async-method
         SendResult<Integer, String> sendResult= libEventProducer.sendLibraryEventSync(libraryEvent);// this method execute sync-method
 
@@ -47,7 +47,7 @@ public class LibraryEventController {
         {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("libraryEventID can't be null");
         }
-        libraryEvent.setLibraryEvenType(LibraryEvenType.UPDATE);
+        libraryEvent.setLibraryEventType(LibraryEventType.UPDATE);
         SendResult<Integer, String> sendResult= libEventProducer.sendLibraryEventSync(libraryEvent);// this method execute sync-method
 
         if(sendResult != null)
