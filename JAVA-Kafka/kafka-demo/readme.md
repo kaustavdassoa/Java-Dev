@@ -1,11 +1,10 @@
 # Kafka for java Developers 
 
-Sample code showcasing - Kafka producer , Kafka consumer. 
+Sample code showcasing - Kafka producer , Kafka consumer. Unit / Integration testing of Kafka Components
 
 
 #### Steps to start Kafka producer 
 zookeeper-server-start.bat ..\..\config\zookeeper.properties
-
 kafka-server-start.bat ..\..\config\server.properties
 
 
