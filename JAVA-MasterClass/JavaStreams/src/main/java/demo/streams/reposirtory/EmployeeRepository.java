@@ -1,7 +1,7 @@
-package java.demo.streams.demo.reposirtory;
+package demo.streams.reposirtory;
 
-import java.demo.streams.demo.domain.Department;
-import java.demo.streams.demo.domain.Employees;
+import demo.streams.domain.Department;
+import demo.streams.domain.Employees;
 import java.util.List;
 
 public class EmployeeRepository {

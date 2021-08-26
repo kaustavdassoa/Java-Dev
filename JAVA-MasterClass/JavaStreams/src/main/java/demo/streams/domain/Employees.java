@@ -1,4 +1,4 @@
-package java.demo.streams.demo.domain;
+package demo.streams.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
