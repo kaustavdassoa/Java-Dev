@@ -1,9 +1,47 @@
 # Design Patterns 
 
-* [Decorator Design pattern](#decorator-design-pattern)
-* [Strategy Design pattern](#strategy-design-pattern)
-* [Observer Design pattern](#observer-design-pattern)
-* [Factory Desing pattern](#factory-desing-pattern)
+Based on problem analysis, we can categorize design patterns into the following categories.
+
+
+### Creational patterns
+
+* [Factory method/Template](#factory-desing-pattern)
+* Abstract Factory
+* Builder
+* Prototype
+* Singleton
+
+### Structural patterns
+
+* Adapter
+* Bridge
+* Filter
+* Composite
+* [Decorator](#decorator-design-pattern)
+* Facade
+* Flyweight
+* Proxy
+
+### Behavioral patterns 
+
+* Interpreter
+* Template method/ pattern
+* Chain of responsibility
+* Command pattern
+* Iterator pattern
+* [Strategy pattern](#strategy-design-pattern)
+* Visitor pattern
+* [Observer pattern](#observer-design-pattern)
+
+### J2EE patterns 
+
+* MVC Pattern
+* Data Access Object pattern
+* Front controller pattern
+* Intercepting filter pattern
+* Transfer object pattern
+
+
 
 ## Decorator Design pattern
 The Decorator Pattern proposes a solution to modify an object in run time, applying independent features or behaviors which can be combined and accumulated in any order.
