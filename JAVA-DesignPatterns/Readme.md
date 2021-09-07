@@ -4,6 +4,7 @@ Based on problem analysis, we can categorize design patterns into the following 
 
 
 ### Creational patterns
+Creational design patterns are related to the way of creating objects. Creational design patterns are used when a decision is made at the time of instantiation of a class.
 
 * [Factory method/Template](#factory-desing-pattern)
 * Abstract Factory
@@ -12,6 +13,7 @@ Based on problem analysis, we can categorize design patterns into the following 
 * Singleton
 
 ### Structural patterns
+Structural patterns are used to provide solutions and efficient standards regarding class compositions and object structures. They depend on the concept of inheritance and interfaces to allow multiple objects or classes to work together and form a single working whole. Structural design patterns are responsible for how classes and objects can be composed to form larger structures.
 
 * Adapter
 * Bridge
@@ -41,6 +43,10 @@ Based on problem analysis, we can categorize design patterns into the following 
 * Intercepting filter pattern
 * Transfer object pattern
 
+### Microservice Design Patterns
+* Event Sourcing
+* CQRS
+* Saga Pattern
 
 
 ## Decorator Design pattern
@@ -73,8 +79,7 @@ Observer is a behavioral design pattern that lets you define a subscription mech
 * Use the pattern when some objects in your app must observe others, but only for a limited time or in specific cases.
 
 
-
-## Factory Desing pattern 
+## Factory Design pattern 
 Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 In Factory pattern, objects are created without exposing the creation logic to the client and refer to newly created object using a common interface.
 ##### When to use Factory pattern
@@ -83,8 +88,21 @@ In Factory pattern, objects are created without exposing the creation logic to t
 * Use the Factory Method when you want to save system resources by reusing existing objects instead of rebuilding them each time.
 
 
+## Saga Design pattern
+Saga Pattern is a direct solution to implementing distributed transactions in a microservices architecture. 
+##### When to use Saga pattern
+* Use the Saga Pattern to implemented distributed transactions in a microservices architecture.. A typical Saga implementation can be seen as a sequence of local transactions where each transaction does a small part of the overall work of the Saga. In other words, a Saga Pattern is pretty much a necessity in a microservices architecture. 
+
+
+
+
+
+
+
+
+
+
+
 #### Refered Link
-
 <a href="https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc" target="_blank">Christopher Okhravi - Design Patterns in Object Oriented Programming</a>
-
 <a href="https://refactoring.guru/design-patterns" target="_blank"> www.refactoring.guru</a>
