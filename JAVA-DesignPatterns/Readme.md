@@ -47,6 +47,7 @@ Structural patterns are used to provide solutions and efficient standards regard
 * Event Sourcing
 * CQRS
 * Saga Pattern
+* [Bulk-Head Resiliency Pattern](#Bulk-Head-Resiliency-Pattern)
 
 
 ## Decorator Design pattern
@@ -96,7 +97,14 @@ Saga Pattern is a direct solution to implementing distributed transactions in a 
 
 
 
+## Bulk-Head Resiliency Pattern
+For a discributed system it is important to recover from a failuer and remain functional to make the system more resillient. The Bulkhead pattern is a type of application design that is tolerant of failure. In a bulkhead architecture, elements of an application are isolated into pools so that if one fails, the others will continue to function. It’s named after the sectioned partitions (bulkheads) of a ship’s hull. If the hull of a ship is compromised, only the damaged section fills with water, which prevents the ship from sinking.
+Bulkhead is a term borrowed from cargo ships. In a cargo ship, the bulkhead is a wall built between different cargo sections, which makes sure that a fire or flood in one section is restricted to that section and other sections are not impacted. You’ve surely guessed what we are trying to suggest: failure in one service or a group of services should not bring down the whole application.
+To implement the bulkhead pattern, we need to make sure that all our services work independently of each other and failure in one will not create a failure in another service. Techniques such as maintaining a single-responsibility pattern, an asynchronous-communication pattern, or fail-fast and failure-handling patterns help us to achieve.
 
+##### When to use Saga pattern
+
+* Use when each of the service are independtly working of each other. 
 
 
 
