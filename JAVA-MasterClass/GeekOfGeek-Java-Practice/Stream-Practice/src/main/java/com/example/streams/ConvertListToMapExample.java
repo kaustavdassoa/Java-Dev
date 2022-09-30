@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class ConvertListToMapTestJava {
+public class ConvertListToMapExample {
 
     public static void main(String[] args) {
         List<String> wordList= Arrays.asList("This","is","a","sample","sentence");
