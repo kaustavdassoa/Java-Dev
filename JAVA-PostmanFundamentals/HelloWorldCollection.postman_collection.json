@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "c1b0d16a-e88d-460f-9b0f-65f3e5e127ae",
+		"name": "HelloWorldCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3445097"
+	},
+	"item": [
+		{
+			"name": "HelloWorldRequestsV1",
+			"item": [
+				{
+					"name": "Hello-World-Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HelloWorldRequestsV2",
+			"item": [
+				{
+					"name": "Hello-World-Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello-World-Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello-World-Put",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"New Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello-World-Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"New Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello-World-Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, welcome to postman tutorial!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HelloWorldRequestsV3",
+			"item": [
+				{
+					"name": "Hello-World-Get-withQuery",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v2/hello-world",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello-World-Get-with-path",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v2/hello-world",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Functional-Testing",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains 'Hello, World! - GET'\", function () {\r",
+									"    pm.expect(pm.response.json().message).to.eql(\"Hello, World! - GET\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Hello-World",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v2/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LoadTesting",
+			"item": [
+				{
+					"name": "API-1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v3/hello-world",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v3",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API-2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v3/hello-world/slow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v3",
+								"hello-world",
+								"slow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API-3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v3/hello-world/random-slow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v3",
+								"hello-world",
+								"random-slow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LoadTestingAdvance",
+			"item": [
+				{
+					"name": "API-1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v2/hello-world",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v2",
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API-2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v3/hello-world/slow",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v3",
+								"hello-world",
+								"slow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "API-3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"greetings\": \"Hello, World!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v3/hello-world/random-slow",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v3",
+								"hello-world",
+								"random-slow"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
