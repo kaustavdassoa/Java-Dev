@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "56d17ec3-1693-4f27-8a47-ca71c4007205",
+		"name": "my-mock-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3445097"
+	},
+	"item": [
+		{
+			"name": "v3/hello-world",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/v3/hello-world",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v3",
+						"hello-world"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v3/hello-world",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v3",
+								"hello-world"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"greetings\": \"Hello, World! - created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "v3/hello-world/slow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/v3/hello-world/slow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v3",
+						"hello-world",
+						"slow"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v3/hello-world/slow",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v3",
+								"hello-world",
+								"slow"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"greetings\": \"Hello, World! - created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "v3/hello-world/random-slow",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/v3/hello-world/random-slow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v3",
+						"hello-world",
+						"random-slow"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/v3/hello-world/random-slow",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"v3",
+								"hello-world",
+								"random-slow"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"greetings\": \"Hello, World! - created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "mock-server-details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/mock-server-details",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"mock-server-details"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/mock-server-details",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"mock-server-details"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "\n{\n    \"server\": \"my-mock-server\"\n}"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://07fe91f1-4a1b-43bd-87e5-30831895bf9b.mock.pstmn.io"
+		}
+	]
+}
