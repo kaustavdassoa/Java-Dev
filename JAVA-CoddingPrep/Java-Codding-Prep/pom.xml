@@ -11,5 +11,6 @@
 	<modules>
         <module>java-dequeue</module>
 		<module>base-package</module>
+		<module>java-streams</module>
     </modules>
 </project>
